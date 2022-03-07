@@ -1,4 +1,5 @@
 #include<iostream>
+#include<conio.h>
 #include<fstream>
 #include<string>
 using namespace std;
@@ -56,28 +57,73 @@ void setup(){
 }
 void draw(){
     system("cls");
-    ff(i,0,width+2)   // for top line 
+    ff(i,0,width)   // for top line 
         cout<<"#";
     cout<<endl;
 
     ff(i,0,height){
-        ff(j,0,width)
+        ff(j,0,width){
             if (j == 0 || j == width-1)
                 cout<<"#";
+            if (i == y and j == x)
+                cout<<"O";
+            else if (i == fruity and j == fruitx)
+                cout<<"F";
             else
                 cout<<" ";
+
+
+        }
         cout<<ndl;
     }
 
-    ff(i,0,width+2)   // for bottom line 
+    ff(i,0,width)   // for bottom line 
         cout<<"#";
     cout<<endl;
 }
 void input(){
-
+    if (_kbhit())
+    {
+        switch (_getch())
+        {
+        case 'a':
+            dir = LEFT;
+            break;
+        case 'w':
+            dir = UP;
+            break;
+        case 's':
+            dir = DOWN;
+            break;
+        case 'd':
+            dir = RIGHT;
+            break;
+        case 'x':
+            gameOver = 1;
+            break;
+        default:
+            break;
+        }
+    }
 }
 void logic(){
-
+    switch (dir)
+    {
+        case LEFT:
+            x--;
+            break;
+        case RIGHT:
+            x++;
+            break;
+        case UP:
+            y++;
+            break;
+        case DOWN :
+            y--;
+            break;
+        default:
+            break;
+    }
 }
 int main ()
 {
