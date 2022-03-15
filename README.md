@@ -1,5 +1,5 @@
 # Naive-Projects
-Snake Game 
+Snake Game
     Dimensional wall
     can't kill yourself
     score
