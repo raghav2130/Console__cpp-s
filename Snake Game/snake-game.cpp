@@ -62,9 +62,8 @@ void draw()
 {
     system("cls");
     ffe(i, 1, width + 2) // for top line
-        cout
-        << "#";
-    cout << endl;
+        cout << "#";
+    cout << ndl;
 
     ff(i, 0, height)
     {
@@ -82,7 +81,7 @@ void draw()
                 ff(k,0,ntail)
                 {
                     if (tailx[k] == j and taily[k] == i)
-                        cout<<"o", print = true;
+                        cout << "o", print = true;
                 }
                 if (!print)
                     cout << " ";
@@ -92,8 +91,7 @@ void draw()
     }
 
     ffe(i, 1, width + 2) // for bottom line
-        cout
-        << "#";
+        cout << "#";
     cout << endl;
 
     cout << "Score = " << score ;
@@ -116,7 +114,7 @@ void input()
         case 'd':
             dir = RIGHT;
             break;
-        case 'g':
+        case 'g':   // press to quit the game
             gameOver = 1;
             break;
         default:
@@ -132,7 +130,7 @@ void logic()
     tailx[0] = x;
     taily[0] = y;
     ff(i,1,ntail)
-    {
+    {   // following tail
         prev2x = tailx[i];
         prev2y = taily[i];
         tailx[i] = prevx;
@@ -159,6 +157,8 @@ void logic()
         break;
     }
     // dir = STOP;
+    
+    //for dimensional wall
     if (x > width)
         x = x % width;
     if (!x)
@@ -168,10 +168,16 @@ void logic()
     if (y < 0)
         y = height - 1;
 
-    // gameOver = true;
+    //normal wall
+//     if (x > width)      goto over;
+//     if (!x)             goto over;
+//     if (y == height)    goto over;
+//     if (y < 0)          goto over;
+//     over:
+//     gameOver = true;
 
     if (fruitx == x and fruity == y)
-    {   // eating fruit
+    {   // eating fruit | new fruit | increasing tail 
         score += 10;
         while (x == fruitx and y == fruity)
         {
@@ -183,7 +189,6 @@ void logic()
 }
 int main()
 {
-    // fio;
     setup();
     wm(!gameOver)
     {
