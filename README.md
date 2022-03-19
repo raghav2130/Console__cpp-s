@@ -9,21 +9,17 @@ with commands. It's tail increases as it eats the randomly placed fruits.
 This is a console version just run the executable (**.exe**) created by IDE or
 compile the code and then run **.exe** file.
 
-I Wanted dive into some projects, after learning some basic c++. Then one of 
+I wanted to dive into some projects, after learning some basic cpp. Then one of 
 My classmate asked me to make a snake game with a tutorial on youtube.
 And here are the results in front of you.
 
-Problems i wanna solve
--   self kill
--   wall distortion
--   spawning of fruit behind tail
 ## 🎮 How to Play
 
 If it's a console game so you only need to run the executable file. 
 use the W, A, S and D keys to play
 press G key to quit.
 
-To change the speed change the sleep value in the Main function.
+To change the speed by changing the sleep value in the Main function.
 
 To remove the dimentional wall and put normal wall.
 - comment out lines form 162 to 169.
@@ -39,6 +35,16 @@ tail portion of the snake.
 
 
 ## 🔍 Optimizations
+
+Problems i wanna solve
+-   wall distortion
+-   spawning of fruit beneath tail
+
+Things I wanna introduce
+-   self kill
+-   bigger fruits with timer
+-   obstacles
+-   portals
 
 If you feel like there is an optimisation feel free to post issue or contribute.
 
