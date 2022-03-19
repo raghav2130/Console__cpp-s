@@ -63,7 +63,7 @@ Most Importantly Self learner.
 
 👯‍♀️ I'm looking to collaborate on Front-End Development
 
-💬 Ask me about tech and 
+💬 Ask me about Tech and AI.
 
 📫 How to reach me [LinkedIn](https://www.linkedin.com/in/raghav2130/) 
 or [EMAIL](crown.rg7244@gmail.com) ;
