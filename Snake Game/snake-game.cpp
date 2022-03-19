@@ -38,13 +38,13 @@ using namespace std;
     w(t) solve();
 
 /* ------------- code starts here --------- */
-
+bool  temp=0;
 bool gameOver = 0;
 const int width = 20;
 const int height = 20;
 int x, y, fruitx, fruity, score;
 int tailx[100], taily[100];
-int ntail;
+int ntail=100;
 enum eDirection { STOP = 0,LEFT,RIGHT,UP,DOWN};
 eDirection dir;
 
@@ -58,6 +58,7 @@ void setup()
     fruity = (rand() % height) + 1;
     int score = 0;
 }
+
 void draw()
 {
     system("cls");
@@ -122,6 +123,7 @@ void input()
         }
     }
 }
+
 void logic()
 {
     int prevx = tailx[0];
@@ -159,22 +161,24 @@ void logic()
     // dir = STOP;
     
     //for dimensional wall
-    if (x > width)
-        x = x % width;
-    if (!x)
-        x = width;
-    if (y == height)
-        y = y % height;
-    if (y < 0)
-        y = height - 1;
+    // if (x > width)
+    //     x = x % width;
+    // if (!x)
+    //     x = width;
+    // if (y == height)
+    //     y = y % height;
+    // if (y < 0)
+    //     y = height - 1;
 
     //normal wall
-//     if (x > width)      goto over;
-//     if (!x)             goto over;
-//     if (y == height)    goto over;
-//     if (y < 0)          goto over;
-//     over:
-//     gameOver = true;
+//  if (x > width)      goto over;
+//  if (!x)             goto over;
+//  if (y == height)    goto over;
+//  if (y < 0)          goto over;
+//  if (temp==1){
+//      over:
+//          gameOver = true;
+//  }
 
     if (fruitx == x and fruity == y)
     {   // eating fruit | new fruit | increasing tail 
@@ -195,6 +199,17 @@ int main()
         draw();
         input();
         logic();
-        Sleep(10);
+        Sleep(100);
     }
+    cout << "Score = " << score ;
+
 }
+
+/* Snake Game
+    Dimensional wall
+    can't kill yourself 
+    score
+    tail length
+    speed control
+    
+*/
