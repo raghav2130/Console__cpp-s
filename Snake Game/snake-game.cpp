@@ -160,15 +160,15 @@ void logic()
     }
     // dir = STOP;
     
-    //for dimensional wall
-    // if (x > width)
-    //     x = x % width;
-    // if (!x)
-    //     x = width;
-    // if (y == height)
-    //     y = y % height;
-    // if (y < 0)
-    //     y = height - 1;
+//     for dimensional wall
+    if (x > width)
+        x = x % width;
+    if (!x)
+        x = width;
+    if (y == height)
+        y = y % height;
+    if (y < 0)
+        y = height - 1;
 
     //normal wall
 //  if (x > width)      goto over;
